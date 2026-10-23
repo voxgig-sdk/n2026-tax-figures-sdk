@@ -1,0 +1,72 @@
+<?php
+declare(strict_types=1);
+
+// N2026TaxFigures SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+N2026TaxFiguresUtility::setRegistrar(function (N2026TaxFiguresUtility $u): void {
+    $u->clean = [N2026TaxFiguresClean::class, 'call'];
+    $u->clean_add = [N2026TaxFiguresClean::class, 'add'];
+    $u->clean_explain = [N2026TaxFiguresDone::class, 'clean_explain'];
+    $u->done = [N2026TaxFiguresDone::class, 'call'];
+    $u->make_error = [N2026TaxFiguresMakeError::class, 'call'];
+    $u->feature_add = [N2026TaxFiguresFeatureAdd::class, 'call'];
+    $u->feature_hook = [N2026TaxFiguresFeatureHook::class, 'call'];
+    $u->feature_init = [N2026TaxFiguresFeatureInit::class, 'call'];
+    $u->fetcher = [N2026TaxFiguresFetcher::class, 'call'];
+    $u->make_fetch_def = [N2026TaxFiguresMakeFetchDef::class, 'call'];
+    $u->make_context = [N2026TaxFiguresMakeContext::class, 'call'];
+    $u->make_options = [N2026TaxFiguresMakeOptions::class, 'call'];
+    $u->make_request = [N2026TaxFiguresMakeRequest::class, 'call'];
+    $u->make_response = [N2026TaxFiguresMakeResponse::class, 'call'];
+    $u->make_result = [N2026TaxFiguresMakeResult::class, 'call'];
+    $u->make_point = [N2026TaxFiguresMakePoint::class, 'call'];
+    $u->make_spec = [N2026TaxFiguresMakeSpec::class, 'call'];
+    $u->make_url = [N2026TaxFiguresMakeUrl::class, 'call'];
+    $u->param = [N2026TaxFiguresParam::class, 'call'];
+    $u->prepare_auth = [N2026TaxFiguresPrepareAuth::class, 'call'];
+    $u->prepare_body = [N2026TaxFiguresPrepareBody::class, 'call'];
+    $u->prepare_headers = [N2026TaxFiguresPrepareHeaders::class, 'call'];
+    $u->prepare_method = [N2026TaxFiguresPrepareMethod::class, 'call'];
+    $u->prepare_params = [N2026TaxFiguresPrepareParams::class, 'call'];
+    $u->prepare_path = [N2026TaxFiguresPreparePath::class, 'call'];
+    $u->prepare_query = [N2026TaxFiguresPrepareQuery::class, 'call'];
+    $u->graphql_body = [N2026TaxFiguresGraphql::class, 'body'];
+    $u->graphql_errors = [N2026TaxFiguresGraphql::class, 'errors'];
+    $u->result_basic = [N2026TaxFiguresResultBasic::class, 'call'];
+    $u->result_body = [N2026TaxFiguresResultBody::class, 'call'];
+    $u->result_headers = [N2026TaxFiguresResultHeaders::class, 'call'];
+    $u->transform_request = [N2026TaxFiguresTransformRequest::class, 'call'];
+    $u->transform_response = [N2026TaxFiguresTransformResponse::class, 'call'];
+});

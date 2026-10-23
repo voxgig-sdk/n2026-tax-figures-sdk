@@ -1,0 +1,28 @@
+# BasicTaxDataFlow
+
+main: kit: flow: BasicTaxDataFlow:
+{
+  entity: "tax_data",
+  kind: "basic",
+  name: "BasicTaxDataFlow",
+  step: [
+    {
+      i: {
+        ref: "tax_data_ref01",
+        srcdatavar: "tax_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tax_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTaxDataFlow"
+}

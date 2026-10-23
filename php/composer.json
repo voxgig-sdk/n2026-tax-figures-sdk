@@ -1,0 +1,29 @@
+{
+  "name": "voxgig-sdk/n2026-tax-figures-sdk",
+  "description": "Unofficial generated PHP SDK for the 2026 Tax Figures public API. Not affiliated with or endorsed by the upstream API provider.",
+  "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "n2026-tax-figures"],
+  "homepage": "https://github.com/voxgig-sdk/n2026-tax-figures-sdk",
+  "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/n2026-tax-figures-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/n2026-tax-figures-sdk"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "files": ["n2026taxfigures_sdk.php"],
+    "classmap": ["core/", "entity/", "feature/", "types/", "utility/", "config.php", "schema.php", "features.php"]
+  },
+  "autoload-dev": {
+    "classmap": ["test/"]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Employer plans, IRAs, SIMPLE, HSA and health FSA limits",
+      "Federal brackets and standard deduction",
+      "Payroll tax rates, wage base and Medicare thresholds",
+      "Premiums, deductibles and IRMAA tiers",
+      "Production server",
+      "Roth IRA, traditional IRA deduction and Saver&#39;s Credit phase-outs",
+      "Static JSON datasets of US tax figures by year: federal brackets, FICA, Social Security, Medicare, contribution limits, phase-outs, RMD ages and state presets. Public and unauthenticated. CORS is not enabled, so requests must be made server-side.",
+      "The 2026 tax dataset",
+      "The index of available years"
+    ]
+  }
+}

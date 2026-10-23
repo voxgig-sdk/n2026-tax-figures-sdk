@@ -1,0 +1,52 @@
+# Entity: index
+
+main: kit: entity: index: {
+
+  alias: field: {}
+
+  fields: {
+    years: {
+      h: "Years"
+      n: "years"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "index"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /tax-data/index.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/tax-data/index.json"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "tax-data"
+            }
+            {
+              lit: "index.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.years`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

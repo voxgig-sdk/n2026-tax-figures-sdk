@@ -1,0 +1,138 @@
+# Entity: tax_data
+
+main: kit: entity: tax_data: {
+
+  alias: field: {}
+
+  fields: {
+    contributionLimits: {
+      h: "Contribution Limits"
+      n: "contributionLimits"
+      r: false
+      sh: "Employer plans, IRAs, SIMPLE, HSA and health FSA limits"
+      t: "`$OBJECT`"
+    }
+    federal: {
+      h: "Federal"
+      n: "federal"
+      r: false
+      sh: "Federal brackets and standard deduction"
+      t: "`$OBJECT`"
+    }
+    fica: {
+      h: "Fica"
+      n: "fica"
+      r: false
+      sh: "Payroll tax rates, wage base and Medicare thresholds"
+      t: "`$OBJECT`"
+    }
+    lastUpdated: {
+      fo: "date"
+      h: "Last Updated"
+      n: "lastUpdated"
+      r: false
+      t: "`$STRING`"
+    }
+    medicare: {
+      h: "Medicare"
+      n: "medicare"
+      r: false
+      sh: "Premiums, deductibles and IRMAA tiers"
+      t: "`$OBJECT`"
+    }
+    phaseOuts: {
+      h: "Phase Outs"
+      n: "phaseOuts"
+      r: false
+      sh: "Roth IRA, traditional IRA deduction and Saver's Credit phase-outs"
+      t: "`$OBJECT`"
+    }
+    publishedAt: {
+      fo: "date-time"
+      h: "Published At"
+      n: "publishedAt"
+      r: false
+      t: "`$STRING`"
+    }
+    rmd: {
+      h: "Rmd"
+      n: "rmd"
+      r: false
+      sh: "Applicable ages and distribution rules"
+      t: "`$OBJECT`"
+    }
+    socialSecurity: {
+      h: "Social Security"
+      n: "socialSecurity"
+      r: false
+      sh: "COLA, wage base and earnings test amounts"
+      t: "`$OBJECT`"
+    }
+    sources: {
+      h: "Sources"
+      n: "sources"
+      r: false
+      sh: "Source ID to metadata"
+      t: "`$OBJECT`"
+    }
+    states: {
+      h: "States"
+      n: "states"
+      r: false
+      sh: "State tax presets"
+      t: "`$OBJECT`"
+    }
+    version: {
+      h: "Version"
+      n: "version"
+      r: false
+      t: "`$STRING`"
+    }
+    year: {
+      h: "Year"
+      n: "year"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "tax_data"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /tax-data/2026.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/tax-data/2026.json"
+          q: {
+            "$action": "2026"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "tax-data"
+            }
+            {
+              lit: "2026.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

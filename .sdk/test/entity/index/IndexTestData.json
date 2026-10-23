@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "index": {
+      "INDEX00": {
+        "years": []
+      },
+      "INDEX01": {
+        "years": []
+      },
+      "INDEX02": {
+        "years": []
+      }
+    }
+  },
+  "new": {
+    "index": {
+      "index_ref01": {
+        "years": []
+      }
+    }
+  },
+  "requests": {
+    "GET /tax-data/index.json": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

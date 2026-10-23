@@ -1,0 +1,152 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "2026 Tax Figures API",
+    "description": "Static JSON datasets of US tax figures by year: federal brackets, FICA, Social Security, Medicare, contribution limits, phase-outs, RMD ages and state presets. Public and unauthenticated. CORS is not enabled, so requests must be made server-side.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://planomy.net/data/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://planomy.net",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/tax-data/index.json": {
+      "get": {
+        "summary": "List available tax data years",
+        "description": "Returns the index of years for which a dataset is published.",
+        "operationId": "getIndex",
+        "responses": {
+          "200": {
+            "description": "The index of available years",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Index"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tax-data/2026.json": {
+      "get": {
+        "summary": "Get the 2026 tax figures",
+        "description": "Returns the full 2026 dataset.",
+        "operationId": "getTaxData2026",
+        "responses": {
+          "200": {
+            "description": "The 2026 tax dataset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaxData"
+                },
+                "example": {
+                  "year": 2026,
+                  "version": "1.0",
+                  "publishedAt": "2026-01-02T00:00:00.000Z",
+                  "lastUpdated": "2026-01-02",
+                  "contributionLimits": {
+                    "elective401k": 24500,
+                    "ira": 7500
+                  },
+                  "socialSecurity": {
+                    "wageBase": 184500
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Index": {
+        "type": "object",
+        "description": "Index of published dataset years.",
+        "properties": {
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "TaxData": {
+        "type": "object",
+        "description": "A full year of tax figures.",
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "version": {
+            "type": "string"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date"
+          },
+          "sources": {
+            "type": "object",
+            "description": "Source ID to metadata",
+            "additionalProperties": true
+          },
+          "federal": {
+            "type": "object",
+            "description": "Federal brackets and standard deduction",
+            "additionalProperties": true
+          },
+          "fica": {
+            "type": "object",
+            "description": "Payroll tax rates, wage base and Medicare thresholds",
+            "additionalProperties": true
+          },
+          "socialSecurity": {
+            "type": "object",
+            "description": "COLA, wage base and earnings test amounts",
+            "additionalProperties": true
+          },
+          "medicare": {
+            "type": "object",
+            "description": "Premiums, deductibles and IRMAA tiers",
+            "additionalProperties": true
+          },
+          "contributionLimits": {
+            "type": "object",
+            "description": "Employer plans, IRAs, SIMPLE, HSA and health FSA limits",
+            "additionalProperties": true
+          },
+          "phaseOuts": {
+            "type": "object",
+            "description": "Roth IRA, traditional IRA deduction and Saver's Credit phase-outs",
+            "additionalProperties": true
+          },
+          "rmd": {
+            "type": "object",
+            "description": "Applicable ages and distribution rules",
+            "additionalProperties": true
+          },
+          "states": {
+            "type": "object",
+            "description": "State tax presets",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

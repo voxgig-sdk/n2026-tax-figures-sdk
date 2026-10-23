@@ -1,0 +1,80 @@
+{
+  "existing": {
+    "tax_data": {
+      "TAX_DATA00": {
+        "contributionLimits": {},
+        "federal": {},
+        "fica": {},
+        "lastUpdated": "s85",
+        "medicare": {},
+        "phaseOuts": {},
+        "publishedAt": "s88",
+        "rmd": {},
+        "socialSecurity": {},
+        "sources": {},
+        "states": {},
+        "version": "s8d",
+        "year": 142,
+        "id": "TAX_DATA00"
+      },
+      "TAX_DATA01": {
+        "contributionLimits": {},
+        "federal": {},
+        "fica": {},
+        "lastUpdated": "s107",
+        "medicare": {},
+        "phaseOuts": {},
+        "publishedAt": "s10a",
+        "rmd": {},
+        "socialSecurity": {},
+        "sources": {},
+        "states": {},
+        "version": "s10f",
+        "year": 272,
+        "id": "TAX_DATA01"
+      },
+      "TAX_DATA02": {
+        "contributionLimits": {},
+        "federal": {},
+        "fica": {},
+        "lastUpdated": "s189",
+        "medicare": {},
+        "phaseOuts": {},
+        "publishedAt": "s18c",
+        "rmd": {},
+        "socialSecurity": {},
+        "sources": {},
+        "states": {},
+        "version": "s191",
+        "year": 402,
+        "id": "TAX_DATA02"
+      }
+    }
+  },
+  "new": {
+    "tax_data": {
+      "tax_data_ref01": {
+        "contributionLimits": {},
+        "federal": {},
+        "fica": {},
+        "lastUpdated": "s20b",
+        "medicare": {},
+        "phaseOuts": {},
+        "publishedAt": "s20e",
+        "rmd": {},
+        "socialSecurity": {},
+        "sources": {},
+        "states": {},
+        "version": "s213",
+        "year": 532
+      }
+    }
+  },
+  "requests": {
+    "GET /tax-data/2026.json": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

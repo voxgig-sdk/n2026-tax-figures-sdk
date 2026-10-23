@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://planomy.net/data/"
+      }
+      description: "Static JSON datasets of US tax figures by year: federal brackets, FICA, Social Security, Medicare, contribution limits, phase-outs, RMD ages and state presets. Public and unauthenticated. CORS is not enabled, so requests must be made server-side."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://planomy.net"
+        }
+      ]
+      summary: "Static JSON datasets of US tax figures by year: federal brackets, FICA, Social Security, Medicare, contribution limits, phase-outs, RMD ages and state presets."
+      title: "2026 Tax Figures API"
+      version: "1.0.0"
+      website: "https://planomy.net"
+    }
+  }
+}
+
